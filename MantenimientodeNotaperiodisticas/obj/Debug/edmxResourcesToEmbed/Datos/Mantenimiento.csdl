@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Mantenimiento" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="MantenimientoContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Tipo_UsuarioSet" EntityType="Mantenimiento.Tipo_Usuario" />
+    <EntitySet Name="UsuarioSet" EntityType="Mantenimiento.Usuario" />
+    <AssociationSet Name="UsuarioTipo_Usuario" Association="Mantenimiento.UsuarioTipo_Usuario">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Tipo_Usuario" EntitySet="Tipo_UsuarioSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tipo_Usuario">
+    <Key>
+      <PropertyRef Name="Id_TipoUsuario" />
+    </Key>
+    <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tipo_usuario" Type="String" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario" Type="Int32" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="USR_idusuario" />
+    </Key>
+    <Property Name="USR_idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USR_Username" Type="String" Nullable="false" />
+    <Property Name="USR_Pass" Type="String" Nullable="false" />
+    <Property Name="USR_Id_TipoUsuario" Type="Int32" Nullable="false" />
+    <Property Name="Tipo_UsuarioId_TipoUsuario" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tipo_Usuario" Relationship="Mantenimiento.UsuarioTipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
+  </EntityType>
+  <Association Name="UsuarioTipo_Usuario">
+    <End Type="Mantenimiento.Usuario" Role="Usuario" Multiplicity="1" />
+    <End Type="Mantenimiento.Tipo_Usuario" Role="Tipo_Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="USR_idusuario" />
+      </Principal>
+      <Dependent Role="Tipo_Usuario">
+        <PropertyRef Name="UsuarioUSR_idusuario1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

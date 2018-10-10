@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MantenimientoStoreContainer" CdmEntityContainer="MantenimientoContainer">
+    <EntitySetMapping Name="Tipo_UsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Mantenimiento.Tipo_Usuario)">
+        <MappingFragment StoreEntitySet="Tipo_UsuarioSet">
+          <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
+          <ScalarProperty Name="Tipo_usuario" ColumnName="Tipo_usuario" />
+          <ScalarProperty Name="UsuarioUSR_idusuario" ColumnName="UsuarioUSR_idusuario" />
+          <ScalarProperty Name="UsuarioUSR_idusuario1" ColumnName="UsuarioUSR_idusuario1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Mantenimiento.Usuario)">
+        <MappingFragment StoreEntitySet="UsuarioSet">
+          <ScalarProperty Name="USR_idusuario" ColumnName="USR_idusuario" />
+          <ScalarProperty Name="USR_Username" ColumnName="USR_Username" />
+          <ScalarProperty Name="USR_Pass" ColumnName="USR_Pass" />
+          <ScalarProperty Name="USR_Id_TipoUsuario" ColumnName="USR_Id_TipoUsuario" />
+          <ScalarProperty Name="Tipo_UsuarioId_TipoUsuario" ColumnName="Tipo_UsuarioId_TipoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Mantenimiento.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MantenimientoStoreContainer">
+    <EntitySet Name="Tipo_UsuarioSet" EntityType="Mantenimiento.Store.Tipo_UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsuarioSet" EntityType="Mantenimiento.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UsuarioTipo_Usuario" Association="Mantenimiento.Store.UsuarioTipo_Usuario">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Tipo_Usuario" EntitySet="Tipo_UsuarioSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tipo_UsuarioSet">
+    <Key>
+      <PropertyRef Name="Id_TipoUsuario" />
+    </Key>
+    <Property Name="Id_TipoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo_usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario" Type="int" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSet">
+    <Key>
+      <PropertyRef Name="USR_idusuario" />
+    </Key>
+    <Property Name="USR_idusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USR_Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="USR_Pass" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="USR_Id_TipoUsuario" Type="int" Nullable="false" />
+    <Property Name="Tipo_UsuarioId_TipoUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UsuarioTipo_Usuario">
+    <End Role="Usuario" Type="Mantenimiento.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="Tipo_Usuario" Type="Mantenimiento.Store.Tipo_UsuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="USR_idusuario" />
+      </Principal>
+      <Dependent Role="Tipo_Usuario">
+        <PropertyRef Name="UsuarioUSR_idusuario1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Mantenimiento" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MantenimientoContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tipo_UsuarioSet" EntityType="Mantenimiento.Tipo_Usuario" />
+          <EntitySet Name="UsuarioSet" EntityType="Mantenimiento.Usuario" />
+          <AssociationSet Name="UsuarioTipo_Usuario" Association="Mantenimiento.UsuarioTipo_Usuario">
+            <End Role="Usuario" EntitySet="UsuarioSet" />
+            <End Role="Tipo_Usuario" EntitySet="Tipo_UsuarioSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Tipo_Usuario">
+          <Key>
+            <PropertyRef Name="Id_TipoUsuario" />
+          </Key>
+          <Property Name="Id_TipoUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo_usuario" Type="String" Nullable="false" />
+          <Property Name="UsuarioUSR_idusuario" Type="Int32" Nullable="false" />
+          <Property Name="UsuarioUSR_idusuario1" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="USR_idusuario" />
+          </Key>
+          <Property Name="USR_idusuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="USR_Username" Type="String" Nullable="false" />
+          <Property Name="USR_Pass" Type="String" Nullable="false" />
+          <Property Name="USR_Id_TipoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="Tipo_UsuarioId_TipoUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tipo_Usuario" Relationship="Mantenimiento.UsuarioTipo_Usuario" FromRole="Usuario" ToRole="Tipo_Usuario" />
+        </EntityType>
+        <Association Name="UsuarioTipo_Usuario">
+          <End Type="Mantenimiento.Usuario" Role="Usuario" Multiplicity="1" />
+          <End Type="Mantenimiento.Tipo_Usuario" Role="Tipo_Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuario">
+              <PropertyRef Name="USR_idusuario" />
+            </Principal>
+            <Dependent Role="Tipo_Usuario">
+              <PropertyRef Name="UsuarioUSR_idusuario1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MantenimientoStoreContainer" CdmEntityContainer="MantenimientoContainer">
+    <EntitySetMapping Name="Tipo_UsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Mantenimiento.Tipo_Usuario)">
+        <MappingFragment StoreEntitySet="Tipo_UsuarioSet">
+          <ScalarProperty Name="Id_TipoUsuario" ColumnName="Id_TipoUsuario" />
+          <ScalarProperty Name="Tipo_usuario" ColumnName="Tipo_usuario" />
+          <ScalarProperty Name="UsuarioUSR_idusuario" ColumnName="UsuarioUSR_idusuario" />
+          <ScalarProperty Name="UsuarioUSR_idusuario1" ColumnName="UsuarioUSR_idusuario1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Mantenimiento.Usuario)">
+        <MappingFragment StoreEntitySet="UsuarioSet">
+          <ScalarProperty Name="USR_idusuario" ColumnName="USR_idusuario" />
+          <ScalarProperty Name="USR_Username" ColumnName="USR_Username" />
+          <ScalarProperty Name="USR_Pass" ColumnName="USR_Pass" />
+          <ScalarProperty Name="USR_Id_TipoUsuario" ColumnName="USR_Id_TipoUsuario" />
+          <ScalarProperty Name="Tipo_UsuarioId_TipoUsuario" ColumnName="Tipo_UsuarioId_TipoUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

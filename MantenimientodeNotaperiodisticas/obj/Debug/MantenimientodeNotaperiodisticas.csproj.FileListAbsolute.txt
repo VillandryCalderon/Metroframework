@@ -1,0 +1,17 @@
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MantenimientodeNotaperiodisticas.exe.config
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MantenimientodeNotaperiodisticas.exe
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MantenimientodeNotaperiodisticas.pdb
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MetroFramework.Design.dll
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MetroFramework.dll
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.csprojAssemblyReference.cache
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.FrmLogin.resources
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.Properties.Resources.resources
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.csproj.GenerateResource.cache
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.csproj.CoreCompileInputs.cache
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.csproj.CopyComplete
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.exe
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.pdb
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\obj\Debug\MantenimientodeNotaperiodisticas.Presentacion.FrmMenuPrincipal.resources
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\EntityFramework.dll
+C:\Users\Alexis\Desktop\PRUEBAS\Mantenimiento_Notas\MantenimientodeNotaperiodisticas\bin\Debug\EntityFramework.xml

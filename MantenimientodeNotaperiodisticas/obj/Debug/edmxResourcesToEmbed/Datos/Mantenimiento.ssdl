@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Mantenimiento.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MantenimientoStoreContainer">
+    <EntitySet Name="Tipo_UsuarioSet" EntityType="Mantenimiento.Store.Tipo_UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UsuarioSet" EntityType="Mantenimiento.Store.UsuarioSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="UsuarioTipo_Usuario" Association="Mantenimiento.Store.UsuarioTipo_Usuario">
+      <End Role="Usuario" EntitySet="UsuarioSet" />
+      <End Role="Tipo_Usuario" EntitySet="Tipo_UsuarioSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Tipo_UsuarioSet">
+    <Key>
+      <PropertyRef Name="Id_TipoUsuario" />
+    </Key>
+    <Property Name="Id_TipoUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Tipo_usuario" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario" Type="int" Nullable="false" />
+    <Property Name="UsuarioUSR_idusuario1" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioSet">
+    <Key>
+      <PropertyRef Name="USR_idusuario" />
+    </Key>
+    <Property Name="USR_idusuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USR_Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="USR_Pass" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="USR_Id_TipoUsuario" Type="int" Nullable="false" />
+    <Property Name="Tipo_UsuarioId_TipoUsuario" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="UsuarioTipo_Usuario">
+    <End Role="Usuario" Type="Mantenimiento.Store.UsuarioSet" Multiplicity="1" />
+    <End Role="Tipo_Usuario" Type="Mantenimiento.Store.Tipo_UsuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="USR_idusuario" />
+      </Principal>
+      <Dependent Role="Tipo_Usuario">
+        <PropertyRef Name="UsuarioUSR_idusuario1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
